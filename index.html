@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RahYudi ||</title>
+    <link rel="stylesheet" href="./assets/css/output.css" />
+    <link rel="icon" href="./assets/img/ryu.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Arvo:wght@700&family=Bad+Script&family=Inter:wght@700&family=Italianno&family=Josefin+Sans:wght@500;700&family=Marck+Script&family=Poppins:wght@600&family=Quicksand:wght@400;600&family=Stick+No+Bills:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Arvo:wght@700&family=Bad+Script&family=Inter:wght@700&family=Italianno&family=Josefin+Sans:wght@500;700&family=Marck+Script&family=Poppins:wght@300&family=Quicksand:wght@400;600&family=Stick+No+Bills:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Arvo:wght@700&family=Bad+Script&family=Inter:wght@700&family=Italianno&family=Josefin+Sans:wght@500;700&family=Marck+Script&family=Montserrat&family=Poppins:wght@300&family=Quicksand:wght@400;600&family=Stick+No+Bills:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Arvo:ital@1&family=Bad+Script&family=Cardo:ital@1&family=DM+Sans&family=Figtree&family=Inter&family=Italianno&family=Josefin+Sans:wght@500;700&family=Lexend&family=Marck+Script&family=Montserrat&family=Poppins:wght@300&family=Quattrocento&family=Quicksand:wght@700&family=Sawarabi+Gothic&family=Source+Sans+3&family=Stick+No+Bills:wght@800&family=Unna:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body class="dark:bg-slate-900 bg-slate-200 h-full duration-300">
+    <!-- Navbar -->
+    <nav id="header">
+      <div class="grid grid-cols-3 px-8 py-4">
+        <div class="">
+          <h1
+            class="font-bold font-inter text-[20px] md:text-2xl dark:text-slate-100"
+          >
+            PORTOFOLIO
+          </h1>
+          <p class="text-[10px] md:font-thin md:text-2xl dark:text-slate-100">
+            Software Engineering | UI/UX Designer
+          </p>
+        </div>
+        <div class="justify-self-center">
+          <button
+            id="theme-toggle"
+            type="button"
+            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-md p-2.5"
+          >
+            <svg
+              id="theme-toggle-dark-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+            <svg
+              id="theme-toggle-light-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="justify-self-center">
+          <button
+            id="dropdownDefaultButton"
+            data-dropdown-toggle="dropdown"
+            class="text-black bg-transparent focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg px-4 py-2.5 text-center text-[15px] md:text-2xl inline-flex items-center dark:text-slate-100 dark:focus:ring-blue-800"
+            type="button"
+          >
+            GET TO KNOW MORE
+            <svg
+              class="w-4 h-4 ml-2"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            id="dropdown"
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 font-poppins"
+          >
+            <ul
+              class="py-2 text-md text-gray-700 dark:text-gray-200"
+              aria-labelledby="dropdownDefaultButton"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Me</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >About Me</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#project"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Project</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#gallery"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Gallery</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Body -->
+    <section id="main">
+      <div
+        class="flex flex-col md:flex-row animate__animated animate__fadeInUp mt-12 px-8"
+      >
+        <div class="leading-tight w-full flex justify-center">
+          <div class="">
+            <h1
+              class="drop-shadow-2xl shadow-white font-italianno text-[50px] md:text-[6vw] font-[600] text-indigo-600"
+            >
+              Introduce My Self
+            </h1>
+            <h1
+              class="font-inter font-bold text-[50px] md:text-[4vw] dark:text-slate-100"
+            >
+              NGURAH YUDIANTARA
+            </h1>
+            <h1 class="font-[400] italic text-[4vw] dark:text-slate-100">
+              UI / UX Designer
+            </h1>
+          </div>
+        </div>
+        <div class="w-full">
+          <div class="flex justify-center md:mt-0 mt-10">
+            <div class="float-none md:float-right md:mt-[-100px] mt-10">
+              <img
+                src="./assets/img/dekwah.svg"
+                class="md:w-[30vw] drop-shadow-[0_30px_20px_rgba(255,255,255,0)]"
+              />
+              <div
+                class="float-right absolute md:top-[30%] top-[550px] md:right-[35%] right-0 animate-updown"
+              >
+                <img
+                  src="./assets/img/figma.png"
+                  class="md:w-[120px] w-[25vw] drop-shadow-[0_20px_10px_rgba(120,0,185,0.21)]"
+                />
+              </div>
+              <div
+                class="float-right absolute md:top-[48%] top-[450px] md:right-20 animate-updown"
+              >
+                <img
+                  src="./assets/img/vscode.png"
+                  class="md:w-[90px] w-[18vw] drop-shadow-[0_20px_10px_rgba(3,115,252,0.21)]"
+                />
+              </div>
+              <div
+                class="float-right absolute md:top-[25%] top-[440px] md:right-[8%] right-4 animate-updown"
+              >
+                <img
+                  src="./assets/img/laravel.svg"
+                  class="md:w-[90px] w-[15vw] drop-shadow-[0_20px_10px_rgba(255,23,23,0.21)]"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="my-[200px]">
+        <div
+          class="flex flex-col md:flex-row animate__animated animate__fadeIn mt-[-80px] dark:text-slate-100"
+        >
+          <div class="">
+            <div class="flex justify-center w-full">
+              <img
+                src="./assets/img/dekwah.svg"
+                class="w-[80vw] h-[400px] rounded-2xl drop-shadow-2xl"
+              />
+            </div>
+          </div>
+          <div class="p-10">
+            <div class="grid mb-4">
+              <h1 class="justify-self-center font-inter text-2xl">About Me</h1>
+            </div>
+            <div class="font-poppins text-justify">
+              <p>
+                My name is Gde Ngurah Yudiantara, you can call it Ngurah or
+                Yudi. I was born on September 25, 2006 in Gianyar, Bali
+                (Indonesia). I have studied Software Engineering since I enter
+                Vocational High School (SMK). The reason why I chose the field
+                of Software Engineering because in my opinion this field has
+                great potential for the future and will be a field that is much
+                needed in the future. besides that, I also feel that this field
+                is suitable for me.
+              </p>
+            </div>
+            <div class="flex flex-col justify-center w-full mt-[90px]">
+              <div class="flex flex-row justify-center mb-2">
+                <h1 class="font-inter text-2xl">Social Media</h1>
+              </div>
+              <div class="flex flex-row justify-center">
+                <ul class="space-x-4">
+                  <li class="inline">
+                    <a href="https://www.instagram.com/rahyudiy_"
+                      ><img
+                        src="./assets/img/ig.svg"
+                        class="w-[30px] inline dark:bg-slate-200 dark:rounded-3xl hover:scale-150 duration-300"
+                    /></a>
+                  </li>
+                  <li class="inline">
+                    <a href="https://www.linkedin.com/in/ngurah-yudiantara"
+                      ><img
+                        src="./assets/img/linkedin.svg"
+                        class="w-[30px] inline dark:bg-slate-200 dark:rounded-3xl hover:scale-150 duration-300"
+                    /></a>
+                  </li>
+                  <li class="inline">
+                    <a href="https://github.com/Rahyudiy"
+                      ><img
+                        src="./assets/img/github.svg"
+                        class="w-[30px] inline dark:bg-slate-200 dark:rounded-3xl hover:scale-150 duration-300"
+                    /></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills&tools" class="p-8">
+      <div
+        class="flex justify-center text-4xl font-quickSand m-10 dark:text-slate-100"
+      >
+        <h1>Skills</h1>
+      </div>
+      <div
+        class="grid md:grid-cols-4 grid-cols-2 gap-4 justify-items-center dark:text-slate-100"
+      >
+        <div
+          class="grid justify-center p-4 w-full h-[180px] drop-shadow-xl bg-slate-100 dark:bg-slate-700 rounded-xl text-center"
+        >
+          <img class="w-[80px]" src="./assets/img/html.svg" alt="" />
+          <p class="font-alata text-2xl">Html</p>
+        </div>
+        <div
+          class="grid justify-center p-4 w-full h-[180px] drop-shadow-xl bg-slate-100 dark:bg-slate-700 rounded-xl text-center"
+        >
+          <img class="w-[80px]" src="./assets/img/css.svg" alt="" />
+          <p class="font-alata text-2xl">Css</p>
+        </div>
+        <div
+          class="grid justify-center p-4 w-full h-[180px] drop-shadow-xl bg-slate-100 dark:bg-slate-700 rounded-xl text-center"
+        >
+          <img class="w-[80px]" src="./assets/img/js.svg" alt="" />
+          <p class="font-alata text-2xl">Javascript</p>
+        </div>
+        <div
+          class="grid justify-center p-4 w-full h-[180px] drop-shadow-xl bg-slate-100 dark:bg-slate-700 rounded-xl text-center"
+        >
+          <img class="w-[80px]" src="./assets/img/php.svg" alt="" />
+          <p class="font-alata text-2xl">Php</p>
+        </div>
+        <div
+          class="grid justify-center p-4 w-full h-[180px] drop-shadow-xl bg-slate-100 dark:bg-slate-700 rounded-xl text-center"
+        >
+          <img class="w-[80px]" src="./assets/img/laravel.svg" alt="" />
+          <p class="font-alata text-2xl">Laravel</p>
+        </div>
+        <div
+          class="grid justify-center p-4 w-full h-[180px] drop-shadow-xl bg-slate-100 dark:bg-slate-700 rounded-xl text-center"
+        >
+          <img class="w-[80px]" src="./assets/img/tailwind.svg" alt="" />
+          <p class="font-alata text-2xl">Tailwind</p>
+        </div>
+        <div
+          class="grid justify-center p-4 w-full h-[180px] drop-shadow-xl bg-slate-100 dark:bg-slate-700 rounded-xl text-center"
+        >
+          <img class="w-[80px]" src="./assets/img/react.svg" alt="" />
+          <p class="font-alata text-2xl">React</p>
+        </div>
+        <div
+          class="grid justify-center p-4 w-full h-[180px] drop-shadow-xl bg-slate-100 dark:bg-slate-700 rounded-xl text-center"
+        >
+          <img class="w-[80px]" src="./assets/img/bootstrap.svg" alt="" />
+          <p class="font-alata text-2xl">Bootstrap</p>
+        </div>
+      </div>
+
+      <div
+        class="flex justify-center text-4xl font-quickSand m-10 dark:text-slate-100"
+      >
+        <h1>Tools</h1>
+      </div>
+      <div
+        class="grid md:grid-cols-4 grid-cols-2 gap-4 justify-items-center dark:text-slate-100"
+      >
+        <div
+          class="grid justify-center p-4 w-full h-[180px] drop-shadow-xl bg-slate-100 dark:bg-slate-700 rounded-xl text-center"
+        >
+          <img class="w-[80px]" src="./assets/img/vs-code.svg" alt="" />
+          <p class="font-alata text-2xl">Vs Code</p>
+        </div>
+        <div
+          class="grid justify-center p-4 w-full h-[180px] drop-shadow-xl bg-slate-100 dark:bg-slate-700 rounded-xl text-center"
+        >
+          <img class="w-[80px]" src="./assets/img/git.svg" alt="" />
+          <p class="font-alata text-2xl">Git</p>
+        </div>
+        <div
+          class="grid justify-center p-4 w-full h-[180px] drop-shadow-xl bg-slate-100 dark:bg-slate-700 rounded-xl text-center"
+        >
+          <img class="w-[80px]" src="./assets/img/github.svg" alt="" />
+          <p class="font-alata text-2xl">Github</p>
+        </div>
+        <div
+          class="grid justify-center p-4 w-full h-[180px] drop-shadow-xl bg-slate-100 dark:bg-slate-700 rounded-xl text-center"
+        >
+          <img class="w-[80px]" src="./assets/img/canva.svg" alt="" />
+          <p class="font-alata text-2xl">Canva</p>
+        </div>
+        <div
+          class="grid justify-center p-4 w-full h-[180px] drop-shadow-xl bg-slate-100 dark:bg-slate-700 rounded-xl text-center"
+        >
+          <img class="w-[80px]" src="./assets/img/figma.svg" alt="" />
+          <p class="font-alata text-2xl">Figma</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="p-8" id="project">
+      <div class="flex flex-col text-center w-full my-10">
+        <h1 class="text-4xl font-quickSand dark:text-white">Project</h1>
+      </div>
+      <div
+        class="bg-no-repeat bg-cover bg-left-top w-full h-[700px] drop-shadow-2xl"
+        style="background-image: url('assets/img/bg-01.svg')"
+      >
+        <div class="flex flex-row justify-between">
+          <div class=""></div>
+          <div
+            class="flex md:w-2/4 w-full bg-gradient-to-t from-white px-4 pb-4 h-[700px]"
+          >
+            <div class="flex flex-col self-end">
+              <h1
+                class="font-quickSand md:text-[80px] text-[40px] font-extrabold text-blue-600"
+              >
+                Chat N'rechat
+              </h1>
+              <p
+                class="md:text-[18px] text-[14px] leading-relaxed font-inter font-medium pt-12"
+              >
+                Chat n' Rechat is a landing page for a mobile chatting app,
+                featuring a clean and modern design with a hero component
+                showcasing the app illustration. The page includes several
+                sections, including a list of key features, a call-to-action for
+                users to download the app, and a frequently asked questions
+                section.
+              </p>
+              <h1 class="font-alata text-2xl text-blue-700">Technologies</h1>
+              <div class="flex flex-row justify-start gap-2 flex-wrap py-10">
+                <img class="w-[70px]" src="assets/img/html.svg" alt="" />
+                <img class="w-[70px]" src="assets/img/css.svg" alt="" />
+                <img class="w-[70px]" src="assets/img/js.svg" alt="" />
+                <img class="w-[70px]" src="assets/img/tailwind.svg" alt="" />
+              </div>
+              <a
+                href="https://rahyudiy.github.io/Chat-N-rechat/"
+                class="relative px-5 py-2 text-center w-[220px] font-medium text-white group"
+              >
+                <span
+                  class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-blue-500 group-hover:bg-blue-700 group-hover:skew-x-12"
+                ></span>
+                <span
+                  class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-blue-700 group-hover:bg-blue-500 group-hover:-skew-x-12"
+                ></span>
+                <span
+                  class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-blue-600 -rotate-12"
+                ></span>
+                <span
+                  class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-blue-400 -rotate-12"
+                ></span>
+                <span class="relative">See sites</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-no-repeat bg-cover bg-left-top w-full h-[700px] mt-10 drop-shadow-2xl"
+        style="background-image: url('assets/img/bg-02.svg')"
+      >
+        <div class="flex flex-row justify-between">
+          <div
+            class="md:w-2/4 w-full bg-gradient-to-b from-white px-4 pt-4 h-[700px]"
+          >
+            <div class="flex flex-col">
+              <h1
+                class="font-quickSand md:text-[80px] text-[40px] font-extrabold text-blue-700"
+              >
+                Adoptme
+              </h1>
+              <p
+                class="md:text-[18px] text-[14px] leading-relaxed font-inter font-medium pt-12"
+              >
+                Adopting a pet has never been easier! Check out Adoptme, our new
+                pet adoption website. With a simple and intuitive interface, you
+                can easily browse through pets up for adoption, sponsor your
+                favorite furry friend, and learn about our mission to help
+                animals in need.
+              </p>
+              <h1 class="font-alata text-2xl text-blue-700">Technologies</h1>
+              <div class="flex flex-row justify-start gap-2 flex-wrap py-10">
+                <img class="w-[70px]" src="assets/img/html.svg" alt="" />
+                <img class="w-[70px]" src="assets/img/css.svg" alt="" />
+                <img class="w-[70px]" src="assets/img/js.svg" alt="" />
+                <img class="w-[70px]" src="assets/img/tailwind.svg" alt="" />
+              </div>
+              <a
+                href="https://rahyudiy.github.io/Adoptme/"
+                class="relative px-5 py-2 text-center w-[220px] font-medium text-white group"
+              >
+                <span
+                  class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-blue-500 group-hover:bg-blue-700 group-hover:skew-x-12"
+                ></span>
+                <span
+                  class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-blue-700 group-hover:bg-blue-500 group-hover:-skew-x-12"
+                ></span>
+                <span
+                  class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-blue-600 -rotate-12"
+                ></span>
+                <span
+                  class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-blue-400 -rotate-12"
+                ></span>
+                <span class="relative">See sites</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class=""></div>
+      </div>
+      <div class="flex flex-col text-center my-4">
+        <div class="flex justify-center">
+          <a
+            href="https://github.com/Rahyudiy"
+            class="text-xl font-poppins flex gap-2 px-2 py-4 bg-slate-800 text-white hover:underline hover:duration-300"
+            >See more on Github
+            <img
+              src="./assets/img/github.svg"
+              alt=""
+              class="w-[18px] bg-white rounded-[55%]"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="mt-10" id="gallery">
+      <div>
+        <div
+          class="px-8 md:text-[15vw] text-[50px] font-lexend tracking-wide dark:text-white"
+        >
+          <h1>Gallery</h1>
+        </div>
+      </div>
+      <div
+        class="px-8 bg-no-repeat bg-right-bottom dark:text-white"
+        style="background-image: url('./assets/img/vector3.svg')"
+      >
+        <div
+          class="dark:text-white py-10 grid md:grid-cols-2 font-poppins md:text-[12px] text-[10px] drop-shadow-2xl"
+        >
+          <div class="">
+            <img src="./assets/img/lamp.png" class="md:absolute absolute" />
+          </div>
+          <div
+            class="md:justify-self-end justify-self-center md:mt-0 mt-[200px]"
+            data-aos="fade-up"
+          >
+            <img src="./assets/img/ryu.png" class="md:w-[25vw]" />
+            <p class="text-xl">
+              <strong>Gde Ngurah Yudiantara</strong> -- -- ----
+            </p>
+          </div>
+        </div>
+        <div
+          class="py-10 grid md:grid-cols-2 font-poppins md:text-[12px] text-[10px] drop-shadow-2xl"
+        >
+          <div
+            class="md:justify-self-start justify-self-center"
+            data-aos="fade-up"
+          >
+            <img src="./assets/img/p1.jpg" class="md:w-[25vw] rounded-xl" />
+            <p class="text-xl"><strong>W Friends</strong> -- -- ----</p>
+          </div>
+          <div class=""></div>
+        </div>
+      </div>
+    </section>
+    <script src="./assets/js/app.js"></script>
+    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+  </body>
+</html>
