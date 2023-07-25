@@ -56,3 +56,8 @@ window.onscroll = function () {
       toTop.classList.remove("block");
     }
   };
+
+  const currentYear = new Date().getFullYear();
+
+  // Display the current year in the 'year' paragraph
+  document.getElementById("year").textContent = `${currentYear}`;

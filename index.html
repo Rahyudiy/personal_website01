@@ -39,7 +39,7 @@
   <body class="dark:bg-slate-900 bg-slate-200 h-full duration-300">
     <!-- Navbar -->
     <nav id="header">
-      <div class="grid grid-cols-3 px-8 py-4">
+      <div class="grid grid-cols-3 md:px-8 px-4 py-4">
         <div class="">
           <h1
             class="font-bold font-inter text-[20px] md:text-2xl dark:text-slate-100"
@@ -150,9 +150,9 @@
     </nav>
 
     <!-- Body -->
-    <section id="main">
+    <section id="main" class="">
       <div
-        class="flex flex-col md:flex-row animate__animated animate__fadeInUp mt-12 px-8"
+        class="flex flex-col md:flex-row animate__animated animate__fadeInUp mt-12 md:px-8 px-4"
       >
         <div class="leading-tight w-full flex justify-center">
           <div class="">
@@ -167,7 +167,7 @@
               NGURAH YUDIANTARA
             </h1>
             <h1 class="font-[400] italic text-[4vw] dark:text-slate-100">
-              UI / UX Designer
+              Software Engineering
             </h1>
           </div>
         </div>
@@ -209,7 +209,7 @@
     </section>
 
     <!-- About -->
-    <section id="about">
+    <section id="about" class="md:px-8 px-4">
       <div class="my-[200px]">
         <div
           class="flex flex-col md:flex-row animate__animated animate__fadeIn mt-[-80px] dark:text-slate-100"
@@ -222,13 +222,13 @@
               />
             </div>
           </div>
-          <div class="p-10">
+          <div class="md:p-8 p-4">
             <div class="grid mb-4">
               <h1 class="justify-self-center font-inter text-2xl">About Me</h1>
             </div>
             <div class="font-poppins text-justify">
               <p>
-                My name is Gde Ngurah Yudiantara, you can call it Ngurah or
+                My name is Gde Ngurah Yudiantara, you can call me Ngurah or
                 Yudi. I was born on September 25, 2006 in Gianyar, Bali
                 (Indonesia). I have studied Software Engineering since I enter
                 Vocational High School (SMK). The reason why I chose the field
@@ -274,7 +274,7 @@
     </section>
 
     <!-- Skills -->
-    <section id="skills&tools" class="p-8">
+    <section id="skills&tools" class="md:px-8 px-4">
       <div
         class="flex justify-center text-4xl font-quickSand m-10 dark:text-slate-100"
       >
@@ -375,7 +375,7 @@
     </section>
 
     <!-- Projects -->
-    <section class="p-8" id="project">
+    <section class="md:p-8 p-4" id="project">
       <div class="flex flex-col text-center w-full my-10">
         <h1 class="text-4xl font-quickSand dark:text-white">Project</h1>
       </div>
@@ -503,16 +503,16 @@
     </section>
 
     <!-- Gallery -->
-    <section class="mt-10" id="gallery">
+    <section class="mt-10 md:px-8 px-4" id="gallery">
       <div>
         <div
-          class="px-8 md:text-[15vw] text-[50px] font-lexend tracking-wide dark:text-white"
+          class=" md:text-[15vw] text-[50px] font-lexend tracking-wide dark:text-white"
         >
           <h1>Gallery</h1>
         </div>
       </div>
       <div
-        class="px-8 bg-no-repeat bg-right-bottom dark:text-white"
+        class=" bg-no-repeat bg-right-bottom dark:text-white"
         style="background-image: url('./assets/img/vector3.svg')"
       >
         <div
@@ -545,6 +545,18 @@
         </div>
       </div>
     </section>
+
+    <footer class="bg-white shadow dark:bg-gray-800">
+      <div
+        class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
+      >
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+          >© <span id="year"></span>  
+          <a href="https://www.linkedin.com/in/ngurah-yudiantara" class="hover:underline">Rahyudi™</a>.
+        </span> 
+      </div>
+    </footer>
+
     <script src="./assets/js/app.js"></script>
     <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
